@@ -1,12 +1,12 @@
 import express, { Request, Response } from 'express';
-import config from './config';
-import { perplexity } from './perplexity';
+import config from './config.js';
+import { perplexity } from './perplexity.js';
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
   res.json({
     message: 'Jules Million MVP - Perplexity Integration',
     status: 'running',

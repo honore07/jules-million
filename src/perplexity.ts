@@ -1,5 +1,5 @@
 import axios from 'axios';
-import config from './config';
+import config from './config.js';
 
 interface PerplexityMessage {
   role: 'user' | 'assistant';
@@ -29,7 +29,7 @@ export class PerplexityClient {
   private model: string;
 
   constructor() {
-    this.apiKey = config.perplexity.apiKey;
+    this.apiKey = config.perplexity.apiKey || '';
     this.baseUrl = config.perplexity.baseUrl;
     this.model = config.perplexity.model;
   }
